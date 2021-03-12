@@ -6,7 +6,7 @@ import './detectPackage';
 import type Transport from '@ledgerhq/hw-transport';
 import type { AccountOptions, LedgerAddress, LedgerSignature, LedgerTypes, LedgerVersion } from './types';
 
-import { newDockApp, newKusamaApp, newPolkadotApp, newPolymeshApp, ResponseBase, SubstrateApp } from '@zondax/ledger-polkadot';
+import { newDockApp, newKusamaApp, newPolkadotApp, newPolymeshApp, ResponseBase, SubstrateApp, newCentrifugeApp } from '@zondax/ledger-polkadot';
 
 import { transports } from '@polkadot/hw-ledger-transports';
 import { assert, u8aToBuffer } from '@polkadot/util';
@@ -28,7 +28,8 @@ const APPS: Record<string, (transport: Transport) => SubstrateApp> = {
   dock: newDockApp,
   kusama: newKusamaApp,
   polkadot: newPolkadotApp,
-  polymesh: newPolymeshApp
+  polymesh: newPolymeshApp,
+  centrifuge: newCentrifugeApp
 };
 
 type Chain = keyof typeof APPS;

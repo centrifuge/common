@@ -369,6 +369,8 @@ export const all: NetworkFromSubstrate[] = [
     displayName: 'Centrifuge Chain',
     network: 'centrifuge',
     prefix: 36,
+    hasLedgerSupport: true,
+    slip44: 0x000002eb,
     standardAccount: '*25519',
     symbols: ['RAD'],
     website: 'https://centrifuge.io/'
